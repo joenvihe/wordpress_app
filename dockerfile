@@ -9,8 +9,7 @@ RUN apt-get update && apt-get install -y git
 
 # Clonar el repositorio del plugin PG4WP
 RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git /tmp/pg4wp \
-    && cp -r /tmp/pg4wp/pg4wp /var/www/html/wp-content/plugins/pg4wp \
-    && cp /tmp/pg4wp/wp-includes/db.php /var/www/html/wp-content/
+    && cp -r /tmp/pg4wp/pg4wp /var/www/html/wp-content/plugins/pg4wp
 
 # Copiar el archivo wp-config.php personalizado
 COPY wp-config.php /var/www/html/wp-config.php
