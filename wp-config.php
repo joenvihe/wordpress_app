@@ -5,6 +5,7 @@ define('DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD'));
 define('DB_HOST', getenv('WORDPRESS_DB_HOST'));
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
+define('DB_DRIVER', 'pgsql');
 
 /**#@+
  * Authentication Unique Keys and Salts.
