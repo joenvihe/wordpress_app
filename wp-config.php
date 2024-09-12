@@ -32,7 +32,7 @@ $table_prefix = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  */
-define('WP_DEBUG', True);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -43,3 +43,5 @@ if (!defined('ABSPATH')) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+define('DB_TYPE', 'pgsql'); // Asegúrate de tener esta línea
