@@ -14,7 +14,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 # Clonar el repositorio del plugin PG4WP
 RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git /tmp/pg4wp \
-    && cp -r /tmp/pg4wp/pg4wp /var/www/html/wp-content/plugins/pg4wp
+    && cp -r /tmp/pg4wp/pg4wp /var/www/html/wp-content/plugins/pg4wp \
+    && cp /tmp/pg4wp/db.php /var/www/html/wp-content/db.php
 
 # Copiar el archivo wp-config.php personalizado
 COPY wp-config.php /var/www/html/wp-config.php
