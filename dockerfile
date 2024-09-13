@@ -7,6 +7,11 @@ RUN apt-get update && apt-get install -y libpq-dev postgresql-client \
 # Instalar Git
 RUN apt-get update && apt-get install -y git
 
+# Install WP-CLI
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /usr/local/bin/wp
+
 # Clonar el repositorio del plugin PG4WP
 RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git /tmp/pg4wp \
     && cp -r /tmp/pg4wp/pg4wp /var/www/html/wp-content/plugins/pg4wp
