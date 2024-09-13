@@ -7,7 +7,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 define('DB_DRIVER', 'pgsql');
 define('DB_TYPE', 'pgsql'); // Asegúrate de tener esta línea
-
+define('WP_ALLOW_REPAIR', true);
 
 error_log('DB_NAME: ' . getenv('WORDPRESS_DB_NAME'));
 error_log('DB_USER: ' . getenv('WORDPRESS_DB_USER'));
