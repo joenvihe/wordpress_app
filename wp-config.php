@@ -6,7 +6,13 @@ define('DB_HOST', getenv('WORDPRESS_DB_HOST'));
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 define('DB_DRIVER', 'pgsql');
+define('DB_TYPE', 'pgsql'); // Asegúrate de tener esta línea
 
+
+error_log('DB_NAME: ' . getenv('WORDPRESS_DB_NAME'));
+error_log('DB_USER: ' . getenv('WORDPRESS_DB_USER'));
+error_log('DB_PASSWORD: ' . getenv('WORDPRESS_DB_PASSWORD'));
+error_log('DB_HOST: ' . getenv('WORDPRESS_DB_HOST'));
 /**#@+
  * Authentication Unique Keys and Salts.
  * @since 2.6.0
@@ -33,7 +39,9 @@ $table_prefix = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -44,5 +52,3 @@ if (!defined('ABSPATH')) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-
-define('DB_TYPE', 'pgsql'); // Asegúrate de tener esta línea
