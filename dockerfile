@@ -2,8 +2,9 @@ FROM wordpress:latest
 
 # Instalar las extensiones PHP necesarias para PostgreSQL
 RUN apt-get update && apt-get install -y libpq-dev postgresql-client \
-    && docker-php-ext-install pdo pdo_pgsql
-
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
+    
 # Instalar Git
 RUN apt-get update && apt-get install -y git
 
@@ -16,7 +17,6 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git /tmp/pg4wp \
     && cp -r /tmp/pg4wp/pg4wp /var/www/html/wp-content/plugins/pg4wp \
     && cp /tmp/pg4wp/pg4wp/db.php /var/www/html/wp-content/db.php
-
 
 # Copiar el archivo wp-config.php personalizado
 COPY wp-config.php /var/www/html/wp-config.php
