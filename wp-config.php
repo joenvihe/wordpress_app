@@ -42,13 +42,18 @@ $table_prefix = 'wp_';
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
-
+define('WP_HOME','https://vivelunahuana.com');
+define('WP_SITEURL','https://vivelunahuana.com');
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if (!defined('ABSPATH')) {
     define('ABSPATH', __DIR__ . '/');
 }
+
+define('FORCE_SSL_ADMIN', true);
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+    $_SERVER['HTTPS']='on';
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
