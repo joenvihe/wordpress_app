@@ -20,3 +20,4 @@ RUN git clone https://github.com/kevinoid/postgresql-for-wordpress.git /tmp/pg4w
 
 # Copiar el archivo wp-config.php personalizado
 COPY wp-config.php /var/www/html/wp-config.php
+RUN chown -R www-data:www-data /var/www/html
