@@ -42,8 +42,8 @@ $table_prefix = 'wp_';
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', false);
-define('WP_HOME','https://vivelunahuana.com');
-define('WP_SITEURL','https://vivelunahuana.com');
+#define('WP_HOME','https://vivelunahuana.com');
+#define('WP_SITEURL','https://vivelunahuana.com');
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
