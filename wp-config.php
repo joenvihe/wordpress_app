@@ -51,6 +51,12 @@ if (!defined('ABSPATH')) {
     define('ABSPATH', __DIR__ . '/');
 }
 
+define('FORCE_SSL_ADMIN', true);
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+
 // define('FORCE_SSL_ADMIN', true);
 /*
 if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
